@@ -44,7 +44,7 @@ body {
 /* hero background image */
 .bgimage {
     height:100vh;
-    background: url('images/lukasz-szmigiel-forest.jpg');
+    background: url('images/battlesoftcode.png');
     background-size:cover;
     position:relative;
 }
