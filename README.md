@@ -1,5 +1,5 @@
 # Personal Website
-Github Pages Deployment: https://wtsia.github.io/Portfolio-Website/
+Github Pages Deployment: https://wtsia.github.io/Portfolio/
 
 Technologies Used: HTML, CSS, JavaScript, Bootstrap (5.0.x)
 
