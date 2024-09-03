@@ -32,9 +32,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>                    
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
@@ -50,10 +47,13 @@
                     <li class="nav-item">
                         <a class="nav-link" id="blog" href="https://wtsia.github.io/rover/" target="_blank">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>   
+                </ul>
+                
+            <!-- social media icons -->
+            <div class="social-icons mt-4">
+                <a href="https://www.linkedin.com/in/winstontsia" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/wtsia/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>   
             </div>
         </div>
     </nav>
@@ -61,7 +61,7 @@
     <body>
         <div id="content">
             <!-- main banner -->
-            <section class="bgimage" id="home">
+            <section class="bgimage">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
@@ -76,26 +76,15 @@
 
             <section id="about">
                 <div class="container mb-5">
-                    <h1 class="text-center">About Me</h1>
                     <div class="row mt-4">
                         <div class="col-lg-4">
                             <img src="images/about.jpg" class= "imageAboutPage" alt="">
                         </div>
                         <div class="col-lg-8">
-                            <p><b>Details</b></p>
-                            <div class="row mt-3">
-                                <div class="col-md-6">
-                                    <ul>
-                                    Name: Winston Tsia
-                                    </ul>
-                                </div>
-                            </div>
                             <div class="row mt-3">
                                 <p>Since the age of 10, I've been an avid computer user, learning how to mount ISOs, and participating in peer-to-peer networks. My first encounter with the art of computer programming was during a class where I would learn about programming in C++. Since then, I've developed an avid interest in building software, with a specific interest in software engineering, databases, and information security.
                                 </p>
                                 <p>Computational tools are not only scalable, but the way forward as human society tackles more complex problems, from big data and automation, to assisting human tasks especially in exploration.</p>
-                                <p><b>Hobbies:</b> Table Tennis, Bodybuilding/Calisthenics</p>
-                                <p><b>Other Topics of Interest:</b> Economics, Math, Cryptography, Philosophy</p>
                             </div>
                         </div>
                     </div>
@@ -119,6 +108,38 @@
                                     <div class="text-center">
                                         <a href="https://wtsia.github.io/BattleSoft-Game/" target="_blank" class="btn btn-success">Link</a>
                                         <a href="https://github.com/wtsia/BattleSoft-Game" target="_blank" class="btn btn-success">Repo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mt-4">
+                            <div class="card">
+                                <img class="card-img-top" src="" alt="Card image" style="width:100%">
+                                <div class="card-body">
+                                    <h4 class="card-title">Quizzy</h4>
+                                    <div class="card-portfolio-text">
+                                        <p>An application</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="" target="_blank" class="btn btn-success">Link</a>
+                                        <a href="" target="_blank" class="btn btn-success">Repo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mt-4">
+                            <div class="card">
+                                <img class="card-img-top" src="" alt="Card image" style="width:100%">
+                                <div class="card-body">
+                                    <h4 class="card-title">TO BE DETERMINED</h4>
+                                    <div class="card-portfolio-text">
+                                        <p>An application</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="" target="_blank" class="btn btn-success">Link</a>
+                                        <a href="" target="_blank" class="btn btn-success">Repo</a>
                                     </div>
                                 </div>
                             </div>
@@ -204,54 +225,7 @@
                 </div>
             </section>
 
-            <!-- Personal Repos -->
-
-            <section id="personalrepos">
-                <div class="container mt-3 mb-5">
-                    <h1 class="text-center whitetext">Personal Repos</h1>
-                    <div class="row mt-4">
-                        <div class="col-lg-4 mt-4">
-                            <div class="card skillsText">
-                                <div class="card-body">
-                                    <i class='skillsIcon fa-brands fa-github'></i>
-                                    <h4 class="card-title mt-3">Personal Repos</h4>
-                                    <p class="card-text mt-3">Check out my Github Profile for my latest activity.</p>
-                                    <div class="text-center">
-                                        <a href="https://github.com/wtsia" class="btn btn-success" target="_blank">Link</a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-
-                        <div class="col-lg-4 mt-4">
-                            <div class="card skillsText">
-                                <div class="card-body">
-                                    <i class="skillsIcon fa-solid fa-bridge-water"></i>
-                                    <h4 class="card-title mt-3">LeetCode</h4>
-                                    <p class="card-text mt-3">LeetCode solutions in math and/or code.
-                                    </p>
-                                    <div class="text-center">
-                                        <a href="https://wtsia.github.io/rover/posts/codingchallenges/" class="btn btn-success" target="_blank">Link</a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                                  
-                        <div class="col-lg-4 mt-4">
-                            <div class="card skillsText">
-                                <div class="card-body">
-                                    <i class='skillsIcon fa-solid fa-laptop-code'></i>
-                                    <h4 class="card-title mt-3">Learning</h4>
-                                    <p class="card-text mt-3">Notes I offload to Github (especially computer science/mathematics) for safekeeping.</p>
-                                    <div class="text-center">
-                                        <a href="https://wtsia.github.io/rover/" class="btn btn-success" target="_blank">Link</a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                </div>
-            </section>
-
+            
             <!--medium blog-->
             <section id="medium">
                 <div class="container mb-5">
@@ -274,40 +248,6 @@
                     </div>
                 </div>
             </section>
-            
-            <!-- contact section-->
-            <section id="contact">
-                <div class="container mt-3 pt-5 contactContent">
-                    <h1 class="whitetext text-center">Contact Me</h1>
-                    <div class="row mt-4">
-                        <div class="col-lg-6 mb-4">
-                            <!-- Google map embedded location (San Francisco)  -->
-                            <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;height:450px;">
-                                <div id="embedmap-display" style="height:100%; width:100%;max-width:100%;">
-                                    <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=San+Francisco&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
-                                </div>
-                                <a class="embedded-maphtml" rel="nofollow" href="https://sucks.hosting" id="get-mapdata">check it</a>
-                                <style>#embedmap-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- form fields -->
-                            <form action="https://app.99inbound.com/api/e/xQVuN8_0" method="POST">
-                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Name">
-                                <input type="email" name="email" class="form-control mt-3" placeholder="Email">
-                                <input type="text" name="subject" class="form-control mt-3" placeholder="Subject">
-                                <div class="mb-3 mt-3">
-                                    <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Content"></textarea>
-                                </div>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input type="checkbox" value="1" tabindex="-1" autocomplete="no">
-                                </div>
-                                <button class="btn btn-success">Contact Me</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
             <!--[if lt IE 7]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -320,11 +260,6 @@
     <!-- footer section-->
     <footer id="footer">
         <div class="container-fluid">
-            <!-- social media icons -->
-            <div class="social-icons mt-4">
-                <a href="https://www.linkedin.com/in/winstontsia" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/wtsia/" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
         </div>
     </footer>
 </html>
