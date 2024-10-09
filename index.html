@@ -1,264 +1,131 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Winston's Portfolio Website</title>
-        <meta name="description" content="">
-        <!-- make content mobile responsive for rendering and touch zooming -->
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <!-- bootstrap CDN -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">     
-        <!-- style sheet link-->
-        <link rel="stylesheet" href="style.css">  
-        <!-- import font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
-        <!-- font awesome -->
-        <script src="https://kit.fontawesome.com/2a77569583.js" crossorigin="anonymous"></script>
-    </head>
-
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
-        <div class="container">
-            <a class="navbar-brand" href="#">Winston Tsia</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winston's Portfolio</title>
+    <!-- Link to FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to Google Fonts (Courier Prime for Console-like Font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <h1 class="name">Winston</h1>
+            <a href="https://www.linkedin.com/in/winstontsia/" target="_blank" class="icon-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/wtsia" target="_blank" class="icon-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#skills">Skills</a>
+            <a href="blogs.html" target="_blank">Blogs</a>
+            <button id="toggle-theme" class="toggle-button" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#personalrepos">Repos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="blog" href="https://wtsia.github.io/rover/" target="_blank">Blog</a>
-                    </li>
-                </ul>
-                
-            <!-- social media icons -->
-            <div class="social-icons mt-4">
-                <a href="https://www.linkedin.com/in/winstontsia" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/wtsia/" target="_blank"><i class="fab fa-github"></i></a>
-            </div>   
-            </div>
         </div>
     </nav>
 
-    <body>
-        <div id="content">
-            <!-- main banner -->
-            <section class="bgimage">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
-                        <h2 class="hero_title">Hi, I'm Winston</h2>
+    <!-- Splash Screen -->
+    <section id="splash" class="splash">
+        <div class="splash-content">
+            <img src="assets/profile.jpeg" alt="Winston's Profile Picture" class="profile-pic">
+            <h1>Hi, I'm Winston</h1>
+            <h3 class="subtitle">Keep Scrolling</h3>
+            <i class="fas fa-arrow-down scroll-icon" aria-hidden="true"></i>
+        </div>
+    </section>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content" class="main-content">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>
+                Since the age of 10, I've been an avid computer user, learning how to mount ISOs, and participating in peer-to-peer networks. My first encounter with the art of computer programming was during a class where I would learn about Object-Oriented programming in C++. Since then, I've developed an avid interest in building software, with an interest in software engineering, databases, and information security.
+            </p><br>
+            <p>
+                Computational tools are not only scalable, but the way forward as human society tackles more complex problems, from big data and automation, to assisting human task--especially in exploration.
+            </p>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <h2>Portfolio</h2>
+            <div class="cards-container">
+                <!-- Project Card 1 -->
+                <div class="card">
+                    <h3>BattleSoft</h3>
+                    <p>Browser game utilizing HTML, CSS, JavaScript to implement DOM manipulation and game logic</p>
+                    <div class="buttons">
+                        <a href="https://wtsia.github.io/BattleSoft/" target="_blank" class="btn code-btn" aria-label="View Code for Project One">Code</a>
+                        <a href="https://github.com/wtsia/BattleSoft" target="_blank" class="btn site-btn" aria-label="View Live Site for Project One">Site</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fab fa-html5" title="HTML5"></i>
+                        <i class="fab fa-js" title="JavaScript"></i>
                     </div>
                 </div>
+                <!-- Project Card 2 -->
+                <div class="card">
+                    <h3>Project Two</h3>
+                    <p>A brief description of Project Two.</p>
+                    <div class="buttons">
+                        <a href="https://github.com/yourusername/project-two" target="_blank" class="btn code-btn" aria-label="View Code for Project Two">Code</a>
+                        <a href="https://yourusername.github.io/project-two" target="_blank" class="btn site-btn" aria-label="View Live Site for Project Two">Site</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fab fa-java" title="Java"></i>
+                        <i class="fas fa-database" title="Database"></i>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
             </div>
-            </section>
+        </section>
 
-            <!-- about section-->
-
-            <section id="about">
-                <div class="container mb-5">
-                    <div class="row mt-4">
-                        <div class="col-lg-4">
-                            <img src="images/about.jpg" class= "imageAboutPage" alt="">
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="row mt-3">
-                                <p>Since the age of 10, I've been an avid computer user, learning how to mount ISOs, and participating in peer-to-peer networks. My first encounter with the art of computer programming was during a class where I would learn about programming in C++. Since then, I've developed an avid interest in building software, with a specific interest in software engineering, databases, and information security.
-                                </p>
-                                <p>Computational tools are not only scalable, but the way forward as human society tackles more complex problems, from big data and automation, to assisting human tasks especially in exploration.</p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fab fa-java" title="Java"></i>
+                    <span>Java</span>
                 </div>
-            </section>
-
-            <!-- portfolio section-->
-
-            <section id="portfolio">
-                <div class="container mt-3">
-                    <h1 class="text-center whitetext">Portfolio</h1>
-                    <div class="row">
-                        <div class="col-lg-4 mt-4">
-                            <div class="card">
-                                <img class="card-img-top" src="images/battlesoft.png" alt="Card image" style="width:100%">
-                                <div class="card-body">
-                                    <h4 class="card-title">BattleSoft</h4>
-                                    <div class="card-portfolio-text">
-                                        <p>An application that utilizes HTML and Javascript. Applies DOM manipulation. </p>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="https://wtsia.github.io/BattleSoft-Game/" target="_blank" class="btn btn-success">Link</a>
-                                        <a href="https://github.com/wtsia/BattleSoft-Game" target="_blank" class="btn btn-success">Repo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 mt-4">
-                            <div class="card">
-                                <img class="card-img-top" src="" alt="Card image" style="width:100%">
-                                <div class="card-body">
-                                    <h4 class="card-title">Quizzy</h4>
-                                    <div class="card-portfolio-text">
-                                        <p>An application</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="" target="_blank" class="btn btn-success">Link</a>
-                                        <a href="" target="_blank" class="btn btn-success">Repo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 mt-4">
-                            <div class="card">
-                                <img class="card-img-top" src="" alt="Card image" style="width:100%">
-                                <div class="card-body">
-                                    <h4 class="card-title">TO BE DETERMINED</h4>
-                                    <div class="card-portfolio-text">
-                                        <p>An application</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="" target="_blank" class="btn btn-success">Link</a>
-                                        <a href="" target="_blank" class="btn btn-success">Repo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 mt-4">
-                            <div class="card">
-                                <img class="card-img-top" src="" alt="Card image" style="width:100%">
-                                <div class="card-body">
-                                    <h4 class="card-title">TO BE DETERMINED</h4>
-                                    <div class="card-portfolio-text">
-                                        <p>An application</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="" target="_blank" class="btn btn-success">Link</a>
-                                        <a href="" target="_blank" class="btn btn-success">Repo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill">
+                    <i class="fab fa-python" title="Python"></i>
+                    <span>Python</span>
                 </div>
-            </section>
-
-            <!-- skills section-->
-
-            <section id="skills">
-                <div class="container">
-                    <h1 class="text-center whitetext">Skills</h1>
-                    <div class="row">
-                        <div class="col-lg-4 mt-4">
-                            <div class="card skillsText">
-                                <div class="card-body">
-                                    <div class="skillsIconSmall">
-                                        <i class="fa-brands fa-python"></i>
-                                        <i class="fa-brands fa-js-square"></i>
-                                        <i class="fa-brands fa-java"></i>
-                                        <i class="fa-regular fa-c"></i>
-                                    </div>
-                                    <h4 class="card-title mt-3">Languages</h4>
-                                    <p class="card-text mt-3">
-                                        Python, Javascript, Java, C++
-                                    </p>
-                                    <p>
-                                        Preferred language: Python
-                                    </p>
-                                </div>
-                            </div>  
-                        </div>
-                        
-                        <div class="col-lg-4 mt-4">
-                            <div class="card skillsText">
-                                <div class="card-body">
-                                    <div class="skillsIconSmall">
-                                        <i class="fa-brands fa-docker"></i>
-                                        <i class="fa-brands fa-react"></i>
-                                        <i class="fa-brands fa-node"></i>
-                                    </div>
-                                    <h4 class="card-title mt-3">Frameworks/Libraries</h4>
-                                    <p class="card-text mt-3">Docker, React, Node.js, Express, Handlebars, mongoose, MongoDB (MERN)
-                                    </p>
-                                </div>
-                            </div>  
-                        </div>
-
-                        <div class="col-lg-4 mt-4">
-                            <div class="card skillsText">
-                                <div class="card-body">
-                                    <div class="skillsIconSmall">
-                                        <i class="fa-brands fa-html5"></i>
-                                        <i class='fa-brands fa-bootstrap'></i>
-                                    </div>
-                                    <h4 class="card-title mt-3">Web Development</h4>
-                                    <p class="card-text mt-3">
-                                        I'm able to create sites from scratch and launch them to create meaningful user experiences.
-                                        <br /><br />
-                                        Used on this site: HTML, Bootstrap
-                                    </p>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>
+                <div class="skill">
+                    <i class="fab fa-js" title="JavaScript"></i>
+                    <span>JavaScript</span>
                 </div>
-            </section>
-
-            
-            <!--medium blog-->
-            <section id="medium">
-                <div class="container mb-5">
-                    <div class="row mt-4">
-                        <div class="col-lg-4 mt-4">
-                            <i class="generalIcon fa-brands fa-medium"></i>
-                            <h4 class="card-title mt-3">Live Medium Posts</h4>
-                            <div class="text-center">
-                                <p class="card-text mt-3">@winstontsia</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 mt-4 mb-4 posts">
-                            <div id="retainable-rss-embed" 
-                            data-rss="https://medium.com/feed/@winstontsia"
-                            data-maxcols="6" 
-                            data-layout="slider" 
-                            data-poststyle="external"
-                            data-offset="-100"></div>
-                        </div>
-                    </div>
+                <div class="skill">
+                    <i class="fab fa-react" title="React"></i>
+                    <span>React</span>
                 </div>
-            </section>
-        </div>
-            <!--[if lt IE 7]>
-                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-            <script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
-            <script src="script/script.js" async defer></script>
-    </body>
+                <div class="skill">
+                    <i class="fas fa-database" title="SQL"></i>
+                    <span>SQL</span>
+                </div>
+                <!-- Add more skills as needed -->
+            </div>
+        </section>
 
-    <!-- footer section-->
-    <footer id="footer">
-        <div class="container-fluid">
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Winston Tsia. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Link to External JS -->
+    <script src="js/script.js"></script>
+</body>
 </html>

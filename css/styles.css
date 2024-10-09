@@ -1,0 +1,324 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Light Theme Variables */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --nav-background: #f8f8f8;
+    --card-background: #f0f0f0;
+    --button-background: #333333;
+    --button-color: #ffffff;
+    --splash-background: #ffffff;
+    --splash-text-color: #333333;
+    --btn-hover-bg: #555555;
+    --btn-hover-color: #ffffff;
+    --btn-border-radius: 5px;
+    --console-font: 'Courier Prime', monospace;
+    --navbar-height: 60px; /* Define navbar height for consistent spacing */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --nav-background: #1f1f1f;
+    --card-background: #1e1e1e;
+    --button-background: #e0e0e0;
+    --button-color: #121212;
+    --splash-background: #1f1f1f;
+    --splash-text-color: #e0e0e0;
+    --btn-hover-bg: #999999;
+    --btn-hover-color: #121212;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    scroll-behavior: smooth; /* Enable smooth scrolling for all anchor links */
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-background);
+    padding: 0 20px;
+    z-index: 1000; /* Ensure navbar is above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.icon-link {
+    color: var(--text-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.icon-link:hover {
+    color: #0077b5; /* Example hover color for LinkedIn */
+}
+
+.nav-right a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover {
+    color: #0077b5;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.toggle-button:hover {
+    color: #0077b5;
+}
+
+/* Splash Screen Styles */
+.splash {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--splash-background);
+    color: var(--splash-text-color);
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    padding-top: var(--navbar-height); /* Prevent content from being hidden behind navbar */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--text-color);
+}
+
+.splash-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.scroll-icon {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Bounce Animation for Scroll Icon */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Main Content Styles */
+.main-content {
+    padding-top: var(--navbar-height); /* Ensure content is not hidden behind navbar */
+    padding-bottom: 60px; /* Extra padding at bottom for better spacing */
+}
+
+/* About Section */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Portfolio Section */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+/* Buttons in Portfolio Cards */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 8px 12px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    text-decoration: none;
+    border: none;
+    border-radius: var(--btn-border-radius);
+    font-family: var(--console-font);
+    font-size: 0.9rem;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.code-btn {
+    background-color: #6c63ff; /* Example color for Code button */
+}
+
+.site-btn {
+    background-color: #ff6584; /* Example color for Site button */
+}
+
+.btn:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-color);
+}
+
+/* Technology Icons */
+.icons {
+    display: flex;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #555555;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.skill i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #0077b5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--nav-background);
+    color: var(--text-color);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards-container, .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-right a {
+        margin-right: 10px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .splash-content h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .scroll-icon {
+        font-size: 1.5rem;
+    }
+}
