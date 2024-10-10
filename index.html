@@ -10,12 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/54168818?v=4">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-left">
-            <h1 class="name">Winston</h1>
+            <!-- Make "Winston" Clickable -->
+            <a href="index.html" class="name-link" aria-label="Home">
+                <h1 class="name">Winston</h1>
+            </a>
             <a href="https://www.linkedin.com/in/winstontsia/" target="_blank" class="icon-link" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
@@ -24,7 +28,8 @@
             </a>
         </div>
         <div class="nav-right">
-            <a href="#about">About</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#skills">Skills</a>
             <a href="blogs.html" target="_blank">Blogs</a>
@@ -46,16 +51,6 @@
 
     <!-- Main Content Wrapper -->
     <div id="main-content" class="main-content">
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>
-                Since the age of 10, I've been an avid computer user, learning how to mount ISOs, and participating in peer-to-peer networks. My first encounter with the art of computer programming was during a class where I would learn about Object-Oriented programming in C++. Since then, I've developed an avid interest in building software, with an interest in software engineering, databases, and information security.
-            </p><br>
-            <p>
-                Computational tools are not only scalable, but the way forward as human society tackles more complex problems, from big data and automation, to assisting human task--especially in exploration.
-            </p>
-        </section>
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="section">
@@ -66,11 +61,12 @@
                     <h3>BattleSoft</h3>
                     <p>Browser game utilizing HTML, CSS, JavaScript to implement DOM manipulation and game logic</p>
                     <div class="buttons">
-                        <a href="https://wtsia.github.io/BattleSoft/" target="_blank" class="btn code-btn" aria-label="View Code for Project One">Code</a>
-                        <a href="https://github.com/wtsia/BattleSoft" target="_blank" class="btn site-btn" aria-label="View Live Site for Project One">Site</a>
+                        <a href="https://github.com/wtsia/BattleSoft" target="_blank" class="btn code-btn" aria-label="View Code for Project One">Code</a>
+                        <a href="https://wtsia.github.io/BattleSoft/" target="_blank" class="btn site-btn" aria-label="View Live Site for Project One">Site</a>
                     </div>
                     <div class="icons">
                         <i class="fab fa-html5" title="HTML5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
                         <i class="fab fa-js" title="JavaScript"></i>
                     </div>
                 </div>
@@ -112,10 +108,39 @@
                     <span>React</span>
                 </div>
                 <div class="skill">
+                    <i class="fa-brands fa-js"></i>
+                    <span>Express</span>
+                </div>
+                <div class="skill">
+                    <i class="fa-brands fa-node"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="skill">
                     <i class="fas fa-database" title="SQL"></i>
                     <span>SQL</span>
                 </div>
+                <div class="skill">
+                    <i class="fas fa-database" title="SQL"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill">
+                    <i class="fa-brands fa-html5"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="skill">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <span>CSS</span>
+                </div>
                 <!-- Add more skills as needed -->
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articles" class="section">
+            <h2>Articles</h2>
+            <div id="articles-container" class="articles-container">
+                <!-- Articles will be dynamically loaded here -->
+                <p>Loading articles...</p>
             </div>
         </section>
 
