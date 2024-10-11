@@ -34,9 +34,9 @@ scrollIcon.addEventListener('click', () => {
 // Fetch and Display Medium Articles
 document.addEventListener('DOMContentLoaded', () => {
     const articlesContainer = document.getElementById('articles-container');
-    const mediumFeedURL = 'https://medium.com/feed/@winstontsia'; // Replace with your Medium RSS feed URL
+    const mediumFeedURL = 'https://medium.com/feed/@winstontsia';
     const rss2jsonAPI = 'https://api.rss2json.com/v1/api.json';
-    const apiKey = 'ahnzrvlfcsofslm9vwxegnrqxjaep8kzpoalfyuf'; // Replace with your RSS2JSON API key
+    const apiKey = 'ahnzrvlfcsofslm9vwxegnrqxjaep8kzpoalfyuf';
 
     // Function to fetch Medium articles
     const fetchMediumArticles = async () => {

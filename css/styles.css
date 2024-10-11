@@ -1,8 +1,41 @@
-/* styles.css */
+/* custom */
 
 html {
     scroll-behavior: smooth;
 }
+
+hr.rounded {
+    border-top: 3px solid #bbb;
+    max-width: 20%;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#intro {
+    max-width: 50%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    justify-content: center;
+}
+
+#intro-card {
+    text-align: left;
+}
+
+
+#about-me {
+   padding: 100px;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 50vh; 
+}
+
 /* styles.css */
 
 /* Reset some default browser styles */
@@ -29,6 +62,8 @@ html {
     --navbar-height: 60px; /* Define navbar height for consistent spacing */
     --section-padding: 60px 20px;
     --footer-height: 60px;
+    --icon-size: 1.2rem;
+    --transition-duration: 0.3s;
 }
 
 /* Dark Theme Variables */
@@ -74,11 +109,13 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Left Side of Navbar */
 .nav-left {
     display: flex;
     align-items: center;
 }
 
+/* Clickable "Winston" Link */
 .name-link {
     text-decoration: none; /* Remove underline from the link */
     color: var(--text-color); /* Inherit text color */
@@ -90,15 +127,22 @@ body {
     font-weight: bold;
 }
 
+/* Social Icons */
 .icon-link {
     color: var(--text-color);
     margin-right: 10px;
     font-size: 1.2rem;
-    transition: color 0.3s;
+    transition: color var(--transition-duration);
 }
 
 .icon-link:hover {
     color: #0077b5; /* Example hover color for LinkedIn */
+}
+
+/* Right Side of Navbar (Navigation Links and Theme Toggle) */
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
 .nav-right a {
@@ -106,20 +150,22 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-size: 1rem;
-    transition: color 0.3s;
+    transition: color var(--transition-duration);
 }
 
 .nav-right a:hover {
     color: #0077b5;
 }
 
+/* Theme Toggle Button */
 .toggle-button {
     background: none;
     border: none;
     cursor: pointer;
     color: var(--text-color);
     font-size: 1.2rem;
-    transition: color 0.3s;
+    transition: color var(--transition-duration);
+    margin-left: 15px;
 }
 
 .toggle-button:hover {
@@ -138,13 +184,6 @@ body {
     text-align: center;
     position: relative;
     padding-top: var(--navbar-height); /* Prevent content from being hidden behind navbar */
-}
-
-#intro {
-    max-width: 50%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .profile-pic {
@@ -199,38 +238,43 @@ body {
     padding-bottom: var(--footer-height);
 }
 
+/* About Section */
 .about-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.about-section:nth-child(even) {
-    flex-direction: row-reverse;
+    justify-content: center; /* Center content vertically */
+    height: 100vh; /* Each section takes full viewport height */
+    padding: 20px;
+    text-align: center;
 }
 
 .about-image {
-    width: 45%;
-    max-width: 500px;
-    border-radius: 10px;
+    width: 150px; /* Small image size */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 20px;
+    border: 3px solid var(--text-color);
 }
 
 .about-text {
-    width: 50%;
+    max-width: 600px; /* Limit text width for better readability */
     padding: 20px;
 }
 
 .about-text h2 {
     margin-bottom: 10px;
     font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.about-text p {
-    font-size: 1rem;
-    line-height: 1.5;
+.icon-before-section {
+    margin-right: 10px;
+    font-size: var(--icon-size);
+    color: #0077b5; /* Example color for icons */
 }
 
 /* Portfolio Section */
@@ -259,7 +303,7 @@ body {
     border-radius: 15px;
     width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -294,7 +338,7 @@ body {
     border-radius: var(--btn-border-radius);
     font-family: var(--console-font);
     font-size: 0.9rem;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
     cursor: pointer;
     display: inline-block;
 }
@@ -341,6 +385,39 @@ body {
     color: #0077b5;
 }
 
+/* Certifications Section */
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    text-align: center;
+}
+
+.cert-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.cert-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.cert-details p {
+    font-size: 0.9rem;
+    color: #555555;
+}
+
 /* Articles Section */
 .articles-container {
     display: flex;
@@ -354,7 +431,7 @@ body {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color var(--transition-duration), border-color var(--transition-duration);
 }
 
 .article:hover {
@@ -398,20 +475,24 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .cards-container, .skills-container, .articles-container {
+    /* Adjust Certification Width */
+    .certification {
+        width: 100%;
+    }
+
+    /* Stack Sections Vertically */
+    .cards-container, .skills-container, .certifications-container, .articles-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .nav-right a {
-        margin-right: 10px;
-    }
-
+    /* Adjusted Profile Picture */
     .profile-pic {
         width: 120px;
         height: 120px;
     }
 
+    /* Adjusted Text Sizes */
     .splash-content h1 {
         font-size: 2rem;
     }
@@ -424,11 +505,14 @@ footer {
         font-size: 1.5rem;
     }
 
+    /* About Section Adjustments */
     .about-section {
         flex-direction: column;
+        height: 100vh; /* Ensure each section takes full height */
     }
 
     .about-image, .about-text {
         width: 100%;
     }
 }
+
