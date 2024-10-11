@@ -140,6 +140,13 @@ body {
     padding-top: var(--navbar-height); /* Prevent content from being hidden behind navbar */
 }
 
+#intro {
+    max-width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .profile-pic {
     width: 150px;
     height: 150px;
