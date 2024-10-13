@@ -23,26 +23,38 @@
             <a href="index.html" class="name-link" aria-label="Home">
                 <h1 class="name">Winston</h1>
             </a>
-            <a href="https://www.linkedin.com/in/winstontsia/" target="_blank" class="icon-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="icon-link" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://github.com/wtsia" target="_blank" class="icon-link" aria-label="GitHub">
+            <a href="https://github.com/yourusername" target="_blank" class="icon-link" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
         </div>
         <div class="nav-right">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#skills">Skills</a>
-            <a href="#certifications">Certifications</a>
-            <a href="index.html#articles">Articles</a>
-            <a href="https://wtsia.github.io/rover/" target="_blank">Blog</a>
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger" aria-label="Open Menu" tabindex="0">
+                <i class="fas fa-bars"></i>
+            </div>
             <button id="toggle-theme" class="toggle-button" aria-label="Toggle Dark Mode">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
     </nav>
+
+    <!-- Full-Page Overlay Menu -->
+    <div class="overlay-menu" id="overlay-menu" aria-hidden="true">
+        <button class="close-btn" id="close-btn" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="overlay-menu-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html#about">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#articles">Articles</a></li>
+            <li><a href="https://wtsia.github.io/rover/" target="_blank">Blog</a></li>
+        </ul>
+    </div>
 
     <!-- Splash Screen -->
     <section id="splash" class="splash">

@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/54168818?v=4">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -28,51 +27,55 @@
             </a>
         </div>
         <div class="nav-right">
-            <a href="index.html">Home</a>
-            <a href="about.html#about">About</a>
-            <a href="index.html#portfolio">Portfolio</a>
-            <a href="index.html#skills">Skills</a>
-            <a href="index.html#certifications">Certifications</a>
-            <a href="index.html#articles">Articles</a>
-            <a href="https://wtsia.github.io/rover/" target="_blank">Blog</a>
+            <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger" aria-label="Open Menu" tabindex="0">
+                <i class="fas fa-bars"></i>
+            </div>
             <button id="toggle-theme" class="toggle-button" aria-label="Toggle Dark Mode">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
     </nav>
 
+    <!-- Full-Page Overlay Menu -->
+    <div class="overlay-menu" id="overlay-menu" aria-hidden="true">
+        <button class="close-btn" id="close-btn" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="overlay-menu-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html#about">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#articles">Articles</a></li>
+            <li><a href="https://wtsia.github.io/rover/" target="_blank">Blog</a></li>
+        </ul>
+    </div>
+
     <!-- About Me Page Content -->
     <div id="about-page-content" class="about-page-content">
-        <!-- Section 1: About -->
-        <section id="about" class="section"></section>
-            <div id="about-me">
-                <h2 id="about-card">About me.</h2>
-                <hr class="rounded">
-                <p>
-                    Since the age of 10, I’ve had an avid interest in computers. At the time, you’d find me doing anything from learning basic coding, tinkering with HTML/CSS, mounting ISOs, building PCs, running local gaming servers, game modding, or participating in peer-to-peer networks. Over the years, I've honed my skills in various programming languages and frameworks,
-                    allowing me to build robust and scalable applications.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section 2: My Journey -->
+        <!-- Section 1: My Journey -->
         <section class="about-section">
-            <img src="assets/" alt="My Journey" class="about-image">
+            <img src="assets/about-drawings/journey-drawing.png" alt="Illustration Representing My Journey" class="about-drawing">
             <div class="about-text">
                 <h2><i class="fas fa-route icon-before-section"></i> My Journey</h2>
                 <p>
-                    My first encounter with the art of computer programming was during a class where I would learn about programming in C++. 
+                    I started my journey in the world of technology with a passion for coding and problem-solving.
+                    Over the years, I've honed my skills in various programming languages and frameworks,
+                    allowing me to build robust and scalable applications.
                 </p>
             </div>
         </section>
 
         <!-- Section 2: My Mission -->
         <section class="about-section">
-            <img src="assets/" alt="My Mission" class="about-image">
+            <img src="assets/about-drawings/mission-drawing.png" alt="Illustration Representing My Mission" class="about-drawing">
             <div class="about-text">
                 <h2><i class="fas fa-bullseye icon-before-section"></i> My Mission</h2>
                 <p>
-                    TBD
+                    My mission is to create impactful software solutions that address real-world challenges.
+                    I believe in continuous learning and strive to stay updated with the latest industry trends
+                    to deliver the best possible outcomes in every project I undertake.
                 </p>
             </div>
         </section>

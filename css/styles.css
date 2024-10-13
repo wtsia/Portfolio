@@ -13,7 +13,7 @@ hr.rounded {
 }
 
 #intro {
-    max-width: 50%;
+    max-width: 70%;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
@@ -64,6 +64,9 @@ hr.rounded {
     --footer-height: 60px;
     --icon-size: 1.2rem;
     --transition-duration: 0.3s;
+    --overlay-bg-color: rgba(0, 0, 0, 0.9); /* Dark overlay background */
+    --overlay-menu-width: 100%; /* Full width for overlay */
+    --overlay-transition: all 0.5s ease;
 }
 
 /* Dark Theme Variables */
@@ -78,6 +81,7 @@ body.dark-mode {
     --splash-text-color: #e0e0e0;
     --btn-hover-bg: #999999;
     --btn-hover-color: #121212;
+    --overlay-bg-color: rgba(0, 0, 0, 0.95); /* Darker overlay in dark mode */
 }
 
 /* Global Styles */
@@ -139,22 +143,89 @@ body {
     color: #0077b5; /* Example hover color for LinkedIn */
 }
 
-/* Right Side of Navbar (Navigation Links and Theme Toggle) */
+/* Right Side of Navbar (Hamburger and Theme Toggle) */
 .nav-right {
     display: flex;
     align-items: center;
 }
 
-.nav-right a {
+/* Hamburger Icon */
+.hamburger {
+    cursor: pointer;
     margin-right: 20px;
-    text-decoration: none;
+}
+
+.hamburger i {
+    font-size: 1.5rem;
     color: var(--text-color);
-    font-size: 1rem;
     transition: color var(--transition-duration);
 }
 
-.nav-right a:hover {
-    color: #0077b5;
+.hamburger i:hover {
+    color: #0077b5; /* Example hover color */
+}
+
+/* Overlay Menu */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--overlay-menu-width);
+    height: 100%;
+    background-color: var(--overlay-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%); /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--overlay-transition), opacity var(--overlay-transition), visibility var(--overlay-transition);
+    z-index: 999; /* Below navbar */
+}
+
+/* Show Overlay Menu when Active */
+.overlay-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 2rem;
+}
+
+.close-btn:hover {
+    color: #ff6584; /* Example hover color for close button */
+}
+
+/* Overlay Menu Items */
+.overlay-menu-items {
+    list-style: none;
+    text-align: center;
+}
+
+.overlay-menu-items li {
+    margin: 20px 0;
+}
+
+.overlay-menu-items li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    transition: color var(--transition-duration);
+}
+
+.overlay-menu-items li a:hover {
+    color: #ff6584; /* Example hover color */
 }
 
 /* Theme Toggle Button */
@@ -249,13 +320,10 @@ body {
     text-align: center;
 }
 
-.about-image {
-    width: 150px; /* Small image size */
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+.about-drawing {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
     margin-bottom: 20px;
-    border: 3px solid var(--text-color);
 }
 
 .about-text {
@@ -511,8 +579,7 @@ footer {
         height: 100vh; /* Ensure each section takes full height */
     }
 
-    .about-image, .about-text {
+    .about-drawing, .about-text {
         width: 100%;
     }
 }
-

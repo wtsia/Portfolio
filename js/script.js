@@ -1,28 +1,74 @@
 // script.js
 
-// Night Mode Toggle
-const toggleButton = document.getElementById('toggle-theme');
-const body = document.body;
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const overlayMenu = document.getElementById('overlay-menu');
+    const closeBtn = document.getElementById('close-btn');
+    const toggleThemeButton = document.getElementById('toggle-theme');
 
-// Check for saved user preference, if any, on load of the website
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-    toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-}
+    // Function to open the overlay menu
+    const openMenu = () => {
+        overlayMenu.classList.add('active');
+        overlayMenu.setAttribute('aria-hidden', 'false');
+    };
 
-// Toggle between dark and light mode
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+    // Function to close the overlay menu
+    const closeMenu = () => {
+        overlayMenu.classList.remove('active');
+        overlayMenu.setAttribute('aria-hidden', 'true');
+    };
 
-    // Save the user's preference in localStorage
-    if (body.classList.contains('dark-mode')) {
-        toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-        localStorage.setItem('theme', 'light');
+    // Event listener for hamburger click
+    hamburger.addEventListener('click', (event) => {
+        if (overlayMenu.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Event listener for close button click
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Event listener for clicking outside the overlay menu to close it
+    overlayMenu.addEventListener('click', (event) => {
+        if (event.target === overlayMenu) {
+            closeMenu();
+        }
+    });
+
+    // Allow opening the menu with Enter key when hamburger is focused
+    hamburger.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            openMenu();
+        }
+    });
+
+    // Allow closing the menu with Esc key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && overlayMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+    // Toggle Dark Mode
+    toggleThemeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        // Optionally, save user preference in localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
     }
 });
+
 
 // Smooth Scroll for Scroll Icon
 const scrollIcon = document.querySelector('.scroll-icon');
