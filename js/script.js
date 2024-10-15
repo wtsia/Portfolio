@@ -27,6 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    overlayMenu.addEventListener('click', (event) => {
+        if (overlayMenu.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
     // Event listener for close button click
     closeBtn.addEventListener('click', closeMenu);
 
@@ -74,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const scrollIcon = document.querySelector('.scroll-icon');
 
 scrollIcon.addEventListener('click', () => {
-    document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#intro').scrollIntoView({ behavior: 'smooth' });
 });
 
 // Fetch and Display Medium Articles
