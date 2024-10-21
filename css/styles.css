@@ -292,9 +292,11 @@ body {
     margin-bottom: 10px;
 }
 
-.subtitle {
-    font-size: 1.2rem;
+#subtitle {
+    font-size: .7rem;
     margin-bottom: 20px;
+    font-family: 'Inconsolata', sans-serif;
+    font-weight: 100; /* Use 100, 200, or 300 for thinner text */
 }
 
 .scroll-icon {
