@@ -87,12 +87,32 @@ scrollIcon.addEventListener('click', () => {
     document.querySelector('#intro').scrollIntoView({ behavior: 'smooth' });
 });
 
+// Helper Function
+function randoFunction(str, n) {
+    let result = '';
+    for (let char of str) {
+        if (/[A-Z]/.test(char)) {
+            let randoString = String.fromCharCode(((char.charCodeAt(0) - 65 + n) % 26 + 26) % 26 + 65);
+            result += randoString;
+        } else if (/[a-z]/.test(char)) {
+            let randoString = String.fromCharCode(((char.charCodeAt(0) - 97 + n) % 26 + 26) % 26 + 97);
+            result += randoString;
+        } else if (/[0-9]/.test(char)) {
+            let randoString = String.fromCharCode(((char.charCodeAt(0) - 48 - n) % 10 + 10) % 10 + 48);
+            result += randoString;
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
 // Fetch and Display Medium Articles
 document.addEventListener('DOMContentLoaded', () => {
     const articlesContainer = document.getElementById('articles-container');
     const mediumFeedURL = 'https://medium.com/feed/@winstontsia';
     const rss2jsonAPI = 'https://api.rss2json.com/v1/api.json';
-    const apiKey = secrets.API_KEY;
+    const apiKey = randoFunction('g35vswsv6wrn3jyw8dy6ixvmhocqu4hg4likjj1t', -1337);
 
     // Function to fetch Medium articles
     const fetchMediumArticles = async () => {
@@ -141,3 +161,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchMediumArticles();
 });
+
