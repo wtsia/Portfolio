@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const articlesContainer = document.getElementById('articles-container');
     const mediumFeedURL = 'https://medium.com/feed/@winstontsia';
     const rss2jsonAPI = 'https://api.rss2json.com/v1/api.json';
-    const apiKey = 'ahnzrvlfcsofslm9vwxegnrqxjaep8kzpoalfyuf';
+    const apiKey = process.env.API_KEY;
 
     // Function to fetch Medium articles
     const fetchMediumArticles = async () => {
