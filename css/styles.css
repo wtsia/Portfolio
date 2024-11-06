@@ -85,7 +85,7 @@ h1 {
     --footer-height: 60px;
     --icon-size: 1.2rem;
     --transition-duration: 0.3s;
-    --overlay-bg-color: rgba(0, 0, 0, 0.9); /* Dark overlay background */
+    --overlay-bg-color: #f8f8f8; /* Default background */
     --overlay-menu-width: 100%; /* Full width for overlay */
     --overlay-transition: all 0.5s ease;
 }
@@ -102,7 +102,7 @@ body.dark-mode {
     --splash-text-color: #e0e0e0;
     --btn-hover-bg: #999999;
     --btn-hover-color: #121212;
-    --overlay-bg-color: rgba(0, 0, 0, 0.95); /* Darker overlay in dark mode */
+    --overlay-bg-color: #1f1f1f; /* Darker overlay in dark mode */
     background-image: linear-gradient(#1f1f1f 30%, #121212 50%);
 }
 
@@ -201,9 +201,10 @@ body {
     transform: translateY(-100%); /* Hidden by default */
     opacity: 0;
     visibility: hidden;
-    transition: transform var(--overlay-transition), opacity var(--overlay-transition), visibility var(--overlay-transition);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
     z-index: 999; /* Below navbar */
 }
+
 
 /* Show Overlay Menu when Active */
 .overlay-menu.active {
@@ -240,9 +241,9 @@ body {
 
 .overlay-menu-items li a {
     text-decoration: none;
-    color: white;
     font-size: 2rem;
     transition: color var(--transition-duration);
+    color: var(--overlay-text-color);
 }
 
 .overlay-menu-items li a:hover {
