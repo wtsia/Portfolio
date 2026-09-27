@@ -510,6 +510,40 @@ body {
     color: #555555;
 }
 
+/* Currently Working On Section */
+.modern-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.focus-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb; /* Modern blue accent */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.focus-item h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.focus-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
 /* Articles Section */
 .articles-container {
     display: flex;
