@@ -20,7 +20,6 @@ const PORTFOLIO_DATA = {
       blog: "https://wtsia.github.io/rover/"
     },
     metrics: [
-      { label: "Academic Foundation", value: "CS & Mathematics" },
       { label: "Defensive SecOps", value: "Threat Detection" },
       { label: "Infrastructure", value: "Homelab & Proxmox" },
       { label: "Systems & Scripting", value: "Python & Automation" }
@@ -116,10 +115,10 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "battlesoft",
-      title: "BattleSoft: Real-Time Tactical Browser Simulation",
-      category: "Interactive Systems",
-      period: "Client-Side Engineering",
-      description: "Deterministic tactical simulation engine written in vanilla JavaScript with a discrete state machine loop, modular entity component architecture, zero external dependencies, and real-time collision detection.",
+      title: "BattleSoft: Real-Time Tactical Browser Game",
+      category: "Web Development",
+      period: "Browser Game",
+      description: "A real-time tactical browser game written in vanilla JavaScript with a discrete state machine loop, modular entity component architecture, zero external dependencies, and real-time collision detection.",
       highlights: [
         "Pure modular state manager with zero third-party framework overhead",
         "Deterministic collision handling and responsive event dispatching"

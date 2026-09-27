@@ -233,19 +233,106 @@ function initRoverBlogFeed() {
     }
   };
 
+  const parseQuartzXml = (xmlText) => {
+    try {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+      const parsedPosts = [];
+
+      items.forEach(item => {
+        const titleEl = item.querySelector('title');
+        const linkEl = item.querySelector('link');
+        const descEl = item.querySelector('description');
+        const pubDateEl = item.querySelector('pubDate');
+
+        const title = titleEl ? titleEl.textContent.trim() : '';
+        const link = linkEl ? linkEl.textContent.trim() : '';
+        let description = descEl ? descEl.textContent.trim() : '';
+        const pubDateRaw = pubDateEl ? pubDateEl.textContent.trim() : '';
+
+        // Ignore index / category / home pages
+        if (!title || !link) return;
+        const lowerTitle = title.toLowerCase();
+        if (lowerTitle === 'posts' || lowerTitle === 'tag index' || lowerTitle === 'home') return;
+        if (link.endsWith('/posts/') || link.endsWith('/tags/') || link === 'https://wtsia.github.io/rover/' || link === 'https://wtsia.github.io/rover') return;
+
+        // Clean up description HTML / CDATA
+        description = description.replace(/<[^>]*>?/gm, '').replace(/\s+/g, ' ').trim();
+        if (!description || description.length < 15) {
+          if (lowerTitle.includes('active directory')) {
+            description = 'Enterprise directory service administration, Kerberos authentication, and identity hygiene.';
+          } else if (lowerTitle.includes('security operations center') || lowerTitle.includes('siem')) {
+            description = 'Implementing Elastic Stack SIEM in a homelab environment for telemetry ingestion and threat detection.';
+          } else if (lowerTitle.includes('proxmox')) {
+            description = 'Bare-metal hypervisor setup with Proxmox VE, network bridges, and virtualized guest environments.';
+          } else if (lowerTitle.includes('windows server')) {
+            description = 'Step-by-step technical deployment and configuration of Windows Server in a virtualized lab.';
+          } else {
+            description = 'Technical field notes and systems configuration from the Rover digital garden.';
+          }
+        } else if (description.length > 200) {
+          description = description.slice(0, 195) + '...';
+        }
+
+        // Format publication date
+        let formattedDate = 'Recent';
+        if (pubDateRaw) {
+          const d = new Date(pubDateRaw);
+          if (!isNaN(d.getTime())) {
+            formattedDate = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          }
+        }
+
+        // Determine contextual tags
+        const tags = [];
+        if (lowerTitle.includes('siem') || lowerTitle.includes('security operations') || lowerTitle.includes('soc')) {
+          tags.push('SIEM & SOC', 'Elastic Stack');
+        } else if (lowerTitle.includes('active directory')) {
+          tags.push('Active Directory', 'Identity');
+        } else if (lowerTitle.includes('proxmox')) {
+          tags.push('Homelab & Proxmox', 'Virtualization');
+        } else if (lowerTitle.includes('windows server')) {
+          tags.push('Windows Server', 'Lab Infra');
+        } else {
+          tags.push('Homelab', 'Systems');
+        }
+
+        parsedPosts.push({
+          title,
+          link,
+          description,
+          pubDate: formattedDate,
+          tags,
+          readingTime: '5 min read'
+        });
+      });
+
+      return parsedPosts;
+    } catch (e) {
+      console.warn('[Rover Feed] XML parsing warning:', e);
+      return [];
+    }
+  };
+
   const fetchRoverFeed = async () => {
     if (refreshBtn) refreshBtn.classList.add('spin');
+    const directFeedUrl = 'https://wtsia.github.io/rover/index.xml';
+
     try {
-      const res = await fetch('/api/blog-posts');
-      if (!res.ok) throw new Error('API response not ok');
-      const json = await res.json();
-      if (json && Array.isArray(json.posts) && json.posts.length > 0) {
-        renderPosts(json.posts, json.status === 'success');
-      } else {
-        renderPosts(fallbackPosts, false);
+      // 1. Direct fetch to GitHub Pages Quartz RSS (CORS enabled by GitHub: Access-Control-Allow-Origin: *)
+      const res = await fetch(directFeedUrl, { mode: 'cors' });
+      if (res.ok) {
+        const xmlText = await res.text();
+        const livePosts = parseQuartzXml(xmlText);
+        if (livePosts.length > 0) {
+          renderPosts(livePosts.slice(0, 4), true);
+          return;
+        }
       }
+      throw new Error(`Feed fetch status: ${res.status}`);
     } catch (err) {
-      console.warn('[Rover Feed] Live query error, rendering cached Quartz notes:', err);
+      // 2. Graceful fallback to static cached garden posts without console errors
       renderPosts(fallbackPosts, false);
     } finally {
       if (refreshBtn) {
