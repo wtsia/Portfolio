@@ -3,113 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Winston's Portfolio</title>
-    <!-- Link to FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Link to Google Fonts (Courier Prime for Console-like Font) -->
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-    <!-- Link to External CSS -->
+    <title>About Winston Tsia - IT/Cybersecurity Professional</title>
+    <meta name="description" content="Background, systems engineering philosophy, and technical journey of Winston Tsia. IT/Cybersecurity Professional.">
+    <meta name="author" content="Winston Tsia">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Winston Tsia">
+    <meta property="og:description" content="Background, systems engineering philosophy, and technical journey of Winston Tsia. Background in Computer Science and Mathematics.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://winstontsia.dev/about">
+
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/54168818?v=4">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <!-- Make "Winston" Clickable -->
-            <a href="index.html" class="name-link" aria-label="Home">
-                <h1 class="name">Winston</h1>
+    <!-- Top Navigation Bar (Strict 3-Zone Contract) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- Zone 1: Single text element wordmark -->
+            <a href="index.html" class="brand-wordmark" aria-label="Winston Tsia Home">
+                <span class="brand-indicator" aria-hidden="true"></span>
+                <span>Winston Tsia</span>
             </a>
-            <a href="https://www.linkedin.com/in/winstontsia" target="_blank" class="icon-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/wtsia" target="_blank" class="icon-link" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <div class="nav-right">
-            <!-- Hamburger Icon -->
-            <div class="hamburger" id="hamburger" aria-label="Open Menu" tabindex="0">
-                <i class="fas fa-bars"></i>
-            </div>
-            <button id="toggle-theme" class="toggle-button" aria-label="Toggle Dark Mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Full-Page Overlay Menu -->
-    <div class="overlay-menu" id="overlay-menu" aria-hidden="true">
-        <button class="close-btn" id="close-btn" aria-label="Close Menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="overlay-menu-items">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html#about">About</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#articles">Articles</a></li>
-            <li><a href="https://wtsia.github.io/rover/" target="_blank">Blog</a></li>
-        </ul>
-    </div>
+            <!-- Zone 2: 4-6 clean text navigation links -->
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html#overview">Overview</a></li>
+                    <li><a href="index.html#skills">Competencies</a></li>
+                    <li><a href="index.html#projects">Projects & Lab</a></li>
+                    <li><a href="index.html#rover-feed">Rover Garden</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                </ul>
+            </nav>
 
-    <!-- About Me Page Content -->
-    <div id="about-page-content" class="about-page-content">
-        <!-- Section 1: About Me -->
-        <section id="about" class="section"></section>
-            <div id="about-me">
-                <h1 id="about-card">About me.</h2>
-                <hr class="rounded">
-                <p>
-                    I'm a <b>problem-solver</b> with a knack for figuring things out. When I'm not doing either, you'll find me cycling, lifting weights, or tinkering with any tech I can get my hands on. I'm recreationally drone certified and always love a game of table tennis!
-                </p>
-                <i href="about-journey" id="about-arrow" class="fas fa-arrow-down scroll-icon" aria-hidden="true"></i>
-            </div>
-            
-        </section>
-
-        <!-- Section 2: Journey -->
-        <section id="about-journey" class="about-section">
-            <div class="about-text">
-                <i id="citySF" class="fa-solid fa-mountain-city"></i>
-                <p>
-                    Born in San Francisco, I found a passion for tech early on. At the age of 10 you'd find me making use of old computers for multi-purpose tasks. Primarily driven by video games, I would host private WoW servers on a local machine and configure router settings to allow my best friends access to it. You’d also find me doing anything from messing with HTML/CSS, mounting ISOs, building PCs, locally running other game servers, game modding, or participating in peer-to-peer networks. My first website would be a basic site hosted on Google Sites about spiders.
-                </p><br>
-                <p>
-                    My first encounter with the art of computer programming was during a class where I would learn about programming in C++. I've spent many hours behind a keyboard since.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section 2: My Mission -->
-        <section class="about-section">
-            <div class="about-text">
-                <i id="citySF" class="fa-solid fa-earth-americas"></i>
-                <p>
-                    Over the years, I've honed my skills in various disciplines, programming languages, and frameworks, allowing me to build secure systems, troubleshoot complex environments, and develop robust applications. Projects I like to focus on are ones that promote sustainability, environmentalism, and the overall welfare of humanity.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section 3: Socials -->
-        <section class="about-section">
-            <div class="about-text">
-                <a href="https://defcon.social/@wtsia" target="_blank" id="citySF" class="icon-link" aria-label="Mastodon">
-                    <i  class="fa-brands fa-mastodon"></i>
+            <!-- Zone 3: 1-2 primary actions -->
+            <div class="nav-actions">
+                <button id="toggle-theme" class="icon-btn" aria-label="Toggle Dark or Light Mode">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer" class="primary-cta-link" aria-label="Connect on LinkedIn">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span>LinkedIn</span>
                 </a>
-                <p>
-                    Find me on Mastodon!
-                </p>
+                <button id="hamburger" class="icon-btn mobile-menu-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
             </div>
-        </section>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true">
+        <a href="index.html#overview">Overview</a>
+        <a href="index.html#skills">Technical Competencies</a>
+        <a href="index.html#projects">Projects & Homelab</a>
+        <a href="index.html#rover-feed">Rover Garden (Quartz v5)</a>
+        <a href="about.html">About Winston</a>
+        <a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Winston. All rights reserved.</p>
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+        <div class="section-container">
+            <header class="about-hero">
+                <div class="unboxed-meta-line" style="margin-bottom: 12px;">
+                    <span>Securing IT infrastructure one server at a time.</span>
+                </div>
+                <h1>IT/Cybersecurity Professional</h1>
+                <p class="hero-lead" style="margin-top: 12px;">
+                    Versatile IT/Software professional with a strong foundation in Java, Python, and JavaScript development. Leveraging development, IT operations, and cybersecurity skills to protect digital assets and drive innovation.
+                </p>
+            </header>
+
+            <div class="about-editorial-grid">
+                <!-- Editorial Narrative -->
+                <article class="about-prose">
+                    <div>
+                        <h2 style="font-size: 1.35rem; margin-bottom: 14px;">Roots: Growing Up in San Francisco</h2>
+                        <p>
+                            Growing up in San Francisco, I discovered a passion for technology early on. At the age of ten, you would find me repurposing older desktop machines for multi-purpose tasks. Driven by curiosity and multiplayer gaming, I hosted local game servers, configured router settings and port forwarding to allow friends access over the network, mounted virtual ISO images, built custom desktop PCs, modded game engines, and participated in peer-to-peer networks.
+                        </p>
+                        <p style="margin-top: 14px;">
+                            My formal introduction to computer programming came in a class where I first learned C++. That early exposure instilled a lifelong appreciation for how systems execute under the hood, how networks communicate packet by packet, and how software interacts directly with operating systems.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 style="font-size: 1.35rem; margin-bottom: 14px;">Background in Computer Science & Mathematics</h2>
+                        <p>
+                            I have a strong background in <b>Computer Science and Mathematics</b>. Studying data structures, algorithms, discrete mathematics, object-oriented design, relational database modeling, and low-level systems programming fundamentally shaped how I analyze complex technical problems.
+                        </p>
+                        <p style="margin-top: 14px;">
+                            Viewing computing through mathematical logic and algorithmic efficiency allows me to design deterministic, robust, and scalable solutions. Whether evaluating shortest-path graph optimization algorithms like Dijkstra's, calculating topological min-cuts, or parsing structured schemas, I thrive on problems that demand precision and analytical clarity.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 style="font-size: 1.35rem; margin-bottom: 14px;">Systems & Defensive Cybersecurity Operations</h2>
+                        <p>
+                            In the systems and security domain, I focus on defensive SecOps, vulnerability remediation, threat telemetry correlation, and infrastructure automation. I maintain a dedicated homelab running a <b>Proxmox VE cluster</b> and <b>Suricata IDS/IPS</b> to inspect packet traffic, evaluate security alerts, identify telemetry trend outliers, and simulate enterprise SIEM log ingestion.
+                        </p>
+                        <p style="margin-top: 14px;">
+                            As a participant in the <b>US Cyber Challenge Camp</b>, I completed hands-on Capture the Flag (CTF) challenges covering operating system forensics, mobile artifact analysis, and offensive security methodologies.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 style="font-size: 1.35rem; margin-bottom: 14px;">Technical Garden & Knowledge Sharing</h2>
+                        <p>
+                            I believe in continuous learning, open documentation, and systems discipline. I document my ongoing research, lab deployments, and security investigations on my public <a href="https://wtsia.github.io/rover/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline;">Rover digital garden</a>, powered by Obsidian and Quartz v5.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Sidebar Summary -->
+                <aside class="about-sidebar">
+                    <div class="sidebar-block">
+                        <h4>Public Profiles</h4>
+                        <div class="social-strip" style="justify-content: flex-start; margin-top: 8px;">
+                            <a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://github.com/wtsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://gitlab.com/wtsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitLab">
+                                <i class="fab fa-gitlab" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://defcon.social/@wtsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Defcon Mastodon">
+                                <i class="fab fa-mastodon" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://wtsia.github.io/rover/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Rover Garden">
+                                <i class="fas fa-seedling" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-block">
+                        <h4>Core Focus</h4>
+                        <ul class="sidebar-list">
+                            <li><i class="fas fa-microchip" style="color: var(--accent-primary); margin-right: 8px;"></i> Computer Science & Mathematics</li>
+                            <li><i class="fas fa-shield-halved" style="color: var(--accent-primary); margin-right: 8px;"></i> Defensive SecOps & SIEM Telemetry</li>
+                            <li><i class="fas fa-server" style="color: var(--accent-primary); margin-right: 8px;"></i> Proxmox Virtualization & Suricata IDS</li>
+                            <li><i class="fas fa-terminal" style="color: var(--accent-primary); margin-right: 8px;"></i> Python & Systems Scripting</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 8px;">
+                        <a href="index.html#projects" class="btn-solid" style="width: 100%; justify-content: center;">
+                            <span>View Projects & Labs</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copy">
+                <p>&copy; 2026 Winston Tsia. All rights reserved.</p>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="index.html#overview">Overview</a></li>
+                <li><a href="index.html#skills">Competencies</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="https://wtsia.github.io/rover/" target="_blank" rel="noopener noreferrer">Rover Garden</a></li>
+                <li><a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <!-- Link to External JS -->
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

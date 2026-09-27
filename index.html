@@ -2,236 +2,241 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Winston's Portfolio - Developer showcasing projects, skills, and certifications.">
-    <meta name="keywords" content="Winston, Portfolio, Developer, Java, JavaScript, Python, React, Certifications">
-    <meta name="author" content="Winston">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winston's Portfolio</title>
-    <!-- Link to FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Link to Google Fonts (Courier Prime for Console-like Font) -->
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-    <!-- Link to External CSS -->
+    <title>Winston Tsia - IT/Cybersecurity Professional</title>
+    <meta name="description" content="Winston Tsia - IT/Cybersecurity Professional. Versatile IT/Software professional with a strong foundation in Java, Python, and JavaScript development.">
+    <meta name="keywords" content="Winston Tsia, IT Professional, Cybersecurity, Java, Python, JavaScript, Systems Engineering, Incident Response, EDR, SIEM, Proxmox, Suricata, Network Architecture">
+    <meta name="author" content="Winston Tsia">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Winston Tsia - IT/Cybersecurity Professional">
+    <meta property="og:description" content="Winston Tsia - IT/Cybersecurity Professional. Versatile IT/Software professional with a strong foundation in Java, Python, and JavaScript development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://winstontsia.dev">
+
+    <!-- FontAwesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- External CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/54168818?v=4">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <!-- Make "Winston" Clickable -->
-            <a href="index.html" class="name-link" aria-label="Home">
-                <h1 class="name">Winston</h1>
+    <!-- Top Navigation Bar (Strict 3-Zone Contract) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- Zone 1: Single text element wordmark -->
+            <a href="index.html" class="brand-wordmark" aria-label="Winston Tsia Home">
+                <span class="brand-indicator" aria-hidden="true"></span>
+                <span>Winston Tsia</span>
             </a>
-            <a href="https://www.linkedin.com/in/winstontsia" target="_blank" class="icon-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://gitlab.com/wtsia" target="_blank" class="icon-link" aria-label="GitLab">
-                <i class="fab fa-gitlab"></i>
-            </a>
-            <a href="https://github.com/wtsia" target="_blank" class="icon-link" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <div class="nav-right">
-            <!-- Hamburger Icon -->
-            <div class="hamburger" id="hamburger" aria-label="Open Menu" tabindex="0">
-                <i class="fas fa-bars"></i>
+
+            <!-- Zone 2: 4-6 clean text navigation links -->
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#skills">Competencies</a></li>
+                    <li><a href="#projects">Projects & Lab</a></li>
+                    <li><a href="#rover-feed">Rover Garden</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Zone 3: 1-2 primary actions -->
+            <div class="nav-actions">
+                <button id="toggle-theme" class="icon-btn" aria-label="Toggle Dark or Light Mode">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer" class="primary-cta-link" aria-label="Connect with Winston Tsia on LinkedIn">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <button id="hamburger" class="icon-btn mobile-menu-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
             </div>
-            <button id="toggle-theme" class="toggle-button" aria-label="Toggle Dark Mode">
-                <i class="fas fa-sun"></i>
-            </button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Full-Page Overlay Menu -->
-    <div class="overlay-menu" id="overlay-menu" aria-hidden="true">
-        <button class="close-btn" id="close-btn" aria-label="Close Menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="overlay-menu-items">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html#about">About</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#articles">Articles</a></li>
-            <li><a href="https://wtsia.github.io/rover/" target="_blank">Blog</a></li>
-        </ul>
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true">
+        <a href="#overview">Overview</a>
+        <a href="#skills">Technical Competencies</a>
+        <a href="#projects">Projects & Homelab</a>
+        <a href="#rover-feed">Rover Field Notes (Quartz v5)</a>
+        <a href="about.html">About Winston</a>
+        <a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
     </div>
-
-    <!-- Splash Screen -->
-    <section id="splash" class="splash">
-        <div class="splash-content">
-            <img src="assets/profile.jpeg" alt="Winston's Profile Picture" class="profile-pic">
-            <h1>Hi, I'm Winston</h1>
-            <h3 id="subtitle">S C R O L L</h3>
-            <i href="#portfolio" class="fas fa-arrow-down scroll-icon" aria-hidden="true"></i>
-        </div>
-    </section>
 
     <!-- Main Content Wrapper -->
-    <div id="main-content" class="main-content">
+    <main id="main-content" class="main-wrapper">
+        <!-- Section 1: Hero & Executive Summary -->
+        <section id="overview" class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <!-- Top Tagline -->
+                    <div class="unboxed-meta-line">
+                        <span>Securing IT infrastructure one server at a time.</span>
+                    </div>
 
-        <section id="intro" class="section">
-            <h2 id="intro-card">Let's work together.</h2>
-            <hr class="rounded">
-            <p>I'm a versatile <b>IT/Software professional</b> with a background in Computer Science and Mathematics. With my technical background, and a willingness to take on challenges, let's tackle tough problems <b>together</b>.</p>
-        </section>
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section">
-            <h2>Portfolio</h2>
-            <div class="cards-container">
-                <!-- Project Card 1 -->
-                <div class="card">
-                    <h3>BattleSoft</h3>
-                    <p>Browser game utilizing HTML, CSS, JavaScript to implement DOM manipulation and game logic</p>
-                    <div class="buttons">
-                        <a href="https://github.com/wtsia/BattleSoft" target="_blank" class="btn code-btn" aria-label="View Code for Project One">Code</a>
-                        <a href="https://wtsia.github.io/BattleSoft/" target="_blank" class="btn site-btn" aria-label="View Live Site for Project One">Site</a>
+                    <h1 class="hero-headline">IT/Cybersecurity Professional</h1>
+
+                    <p class="hero-lead">
+                        Versatile IT/Software professional with a strong foundation in Java, Python, and JavaScript development. I thrive during emergencies, but am even better at preventing one. Leveraging development, IT operations, and cybersecurity skills to protect digital assets and drive innovation. With a background in Computer Science and Mathematics, I bring an analytical, problem-solving mindset to infrastructure engineering, proactive threat mitigation, and software architecture.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-solid">
+                            <span>Projects & Homelab</span>
+                            <i class="fas fa-terminal" aria-hidden="true"></i>
+                        </a>
+                        <a href="#skills" class="btn-outline">
+                            <span>Competencies</span>
+                            <i class="fas fa-layer-group" aria-hidden="true"></i>
+                        </a>
+                        <a href="#rover-feed" class="btn-outline">
+                            <span>Field Notes (Rover)</span>
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <div class="icons">
-                        <i class="fab fa-js" title="JavaScript"></i>
-                        <i class="fab fa-html5" title="HTML5"></i>
-                        <i class="fa-brands fa-css3-alt"></i>
-                    </div>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="card">
-                    <h3>Network Analyzer</h3>
-                    <p>Models/optimizes a computer network via console using data structures/algorithms like Djikstra's, B-Trees, Sets, and Priority Queues.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/wtsia/network-graph" target="_blank" class="btn code-btn" aria-label="View Code for Project Two">Code</a>
-                        <a href="https://github.com/wtsia/network-graph/blob/main/NetworkGraphReport.pdf" target="_blank" class="btn site-btn" aria-label="View the report hosted on Github">PDF Report</a>
-                    </div>
-                    <div class="icons">
-                        <i class="fab fa-java" title="Java"></i>
-                        <!-- <i class="fa-brands fa-js"></i>
-                        <i class="fas fa-database" title="Database"></i> -->
-                    </div>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="card">
-                    <h3>JSON Quizzer</h3>
-                    <p>A site/leaning tool that ingests JSON data and formats it into a multiple choice quiz.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/wtsia/JSONLocalQuizzer" target="_blank" class="btn code-btn" aria-label="View Code">Code</a>
-                        <a href="https://wtsia.github.io/JSONLocalQuizzer/" target="_blank" class="btn site-btn" aria-label="View Live Site">Site</a>
-                    </div>
-                    <div class="icons">
-                        <i class="fab fa-js" title="JavaScript"></i>
-                        <i class="fa-brands fa-html5" title="HTML"></i>
-                        <i class="fa-brands fa-css3-alt" title="CSS"></i>
+
+                    <!-- Hero Metrics Strip (Focusing on CS & Math background, systems, and telemetry) -->
+                    <div class="hero-metrics-strip" id="hero-metrics-container">
+                        <div class="metric-item">
+                            <span class="metric-val">CS & Math</span>
+                            <span class="metric-lbl">Academic Foundation</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">Threat Detection</span>
+                            <span class="metric-lbl">Defensive SecOps</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">Proxmox Cluster</span>
+                            <span class="metric-lbl">Homelab Infrastructure</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">Python & Bash</span>
+                            <span class="metric-lbl">Systems Automation</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Hero Profile Card -->
+                <aside class="hero-portrait-card" aria-label="Winston Tsia Profile Summary">
+                    <div class="portrait-frame">
+                        <img src="assets/profile.jpeg" alt="Winston Tsia - Cybersecurity & Systems Engineering" onerror="this.src='assets/pfp.png'">
+                    </div>
+                    <div class="portrait-info">
+                        <h3>Winston Tsia</h3>
+                        <p>IT/Cybersecurity Professional</p>
+                    </div>
+                    <div class="social-strip">
+                        <a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/wtsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://gitlab.com/wtsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitLab Profile">
+                            <i class="fab fa-gitlab" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://defcon.social/@wtsia" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Defcon Mastodon Profile">
+                            <i class="fab fa-mastodon" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wtsia.github.io/rover/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Rover Digital Garden">
+                            <i class="fas fa-seedling" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill">
-                    <i class="fab fa-java" title="Java"></i>
-                    <span>Java</span>
+        <!-- Section 2: Technical Competencies -->
+        <section id="skills" class="section-container" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <h2>Technical Competencies</h2>
                 </div>
-                <div class="skill">
-                    <i class="fab fa-python" title="Python"></i>
-                    <span>Python</span>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-js" title="JavaScript"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill">
-                    <i class="fab fa-react" title="React"></i>
-                    <span>React</span>
-                </div>
-                <div class="skill">
-                    <i class="fa-brands fa-node"></i>
-                    <span>Node.js</span>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-database" title="SQL"></i>
-                    <span>SQL</span>
-                </div>
-                <div class="skill">
-                    <i class="fa-brands fa-html5"></i>
-                    <span>HTML</span>
-                </div>
-                <div class="skill">
-                    <i class="fa-brands fa-css3-alt"></i>
-                    <span>CSS</span>
-                </div>
+                <p class="section-desc">
+                    Applied technical capabilities across defensive security operations, scripting and data automation, and cloud systems architecture.
+                </p>
+            </div>
+
+            <div id="skills-container" class="skills-grid">
+                <!-- Hydrated via js/data.js -->
             </div>
         </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications" class="section">
-            <h2>Certifications</h2>
-            <div class="certifications-container">
-                
-                <div class="certification">
-                    <img src="assets/certifications/secplus.png" alt="Certification 1" class="cert-image">
-                    <div class="cert-details">
-                        <h3>Security+</h3>
-                        <p>Issued by CompTIA in 2026. Expires 2029.</p>
-                    </div>
+        <!-- Section 3: Projects & Homelab Infrastructure -->
+        <section id="projects" class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <h2>Projects & Professional Development</h2>
                 </div>
-                <div class="certification">
-                    <img src="assets/certifications/az900.png" alt="Certification 1" class="cert-image">
-                    <div class="cert-details">
-                        <h3>Microsoft Certified: Azure Fundamentals</h3>
-                        <p>Issued by Microsoft in 2025.</p>
-                    </div>
-                </div>
-                <div class="certification">
-                    <img src="assets/certifications/isc2cc.png" alt="Certification 1" class="cert-image">
-                    <div class="cert-details">
-                        <h3>Certified in Cybersecurity</h3>
-                        <p>Issued by ISC2 in 2024. Expires 2027.</p>
-                    </div>
-                </div>
-                <div class="certification">
-                    <img src="assets/certifications/csmSeal.png" alt="Certification 1" class="cert-image">
-                    <div class="cert-details">
-                        <h3>Certificate in Java Programming</h3>
-                        <p>Issued by College of San Mateo in 2024.</p>
-                    </div>
-                </div>
-                <!-- Certification 2 -->
-                <div class="certification">
-                    <img src="assets/certifications/csmSeal.png" alt="Certification 2" class="cert-image">
-                    <div class="cert-details">
-                        <h3>Certificate in Computer Science Applications and Development</h3>
-                        <p>Issued by College of San Mateo in 2024.</p>
-                    </div>
-                </div>
-                <!-- Add more certifications as needed -->
+                <p class="section-desc">
+                    Self-directed homelab clusters, intrusion detection simulation, competitive CTF forensics, and algorithmic systems engineering.
+                </p>
+            </div>
+
+            <div id="projects-container" class="projects-grid">
+                <!-- Hydrated via js/data.js -->
             </div>
         </section>
 
-        <section id="current-focus" class="modern-section">
-        <h2>Currently Studying & Working On</h2>
-        <div class="focus-grid">
-            <div class="focus-item">
-            <h3>CompTIA CySA+ Certification</h3>
-            <p>Advancing my expertise in cybersecurity analytics, intrusion detection, and proactive threat hunting to complement my existing Security+ credential.</p>
+        <!-- Section 4: Recent Notes from Rover (Quartz v5) -->
+        <section id="rover-feed" class="section-container rover-section">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <h2>Field Notes & Technical Garden</h2>
+                    <div class="rover-header-meta">
+                        <div id="rover-feed-status" class="live-feed-badge">
+                            <span class="live-dot" aria-hidden="true"></span>
+                            <span>Connected to wtsia.github.io/rover</span>
+                        </div>
+                        <button id="refresh-rover-btn" class="refresh-feed-btn" aria-label="Refresh Quartz blog posts">
+                            <i class="fas fa-arrows-rotate" aria-hidden="true"></i>
+                            <span>Sync</span>
+                        </button>
+                    </div>
+                </div>
+                <p class="section-desc">
+                    Live notes, homelab architectures, and security investigations syndicated directly from my Obsidian knowledge base running Quartz v5.
+                </p>
             </div>
 
-            <div class="focus-item">
-            <h3>Digital Forensics & Incident Response (DFIR)</h3>
-            <p>Expanding my knowledge in threat mitigation and incident management through specialized training materials and industry summits.</p>
+            <!-- Posts Grid -->
+            <div id="rover-posts-container" class="rover-grid">
+                <!-- Hydrated via /api/blog-posts with instant fallback -->
             </div>
+
+            <div style="margin-top: 32px; text-align: center;">
+                <a href="https://wtsia.github.io/rover/" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                    <span>Explore Complete Knowledge Base on Rover (Quartz v5)</span>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copy">
+                <p>&copy; 2026 Winston Tsia. All rights reserved.</p>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#skills">Competencies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="https://wtsia.github.io/rover/" target="_blank" rel="noopener noreferrer">Rover Garden</a></li>
+                <li><a href="https://www.linkedin.com/in/winstontsia" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Winston Tsia. All rights reserved.</p>
     </footer>
 
-    <!-- Link to External JS -->
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
