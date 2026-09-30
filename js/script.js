@@ -123,6 +123,42 @@ function initDataHydration() {
     `).join('');
   }
 
+  // Hydrate Certifications & Industry Credentials
+  const certsContainer = document.getElementById('certifications-container');
+  if (certsContainer && Array.isArray(data.certifications)) {
+    certsContainer.innerHTML = data.certifications.map(c => `
+      <div class="cert-card">
+        <div class="cert-badge-wrap">
+          <img src="${c.badge}" alt="${c.name}" loading="lazy" onerror="this.parentElement.innerHTML='<i class=\\'fas fa-award fa-2x\\' style=\\'color:var(--accent-primary)\\'></i>'">
+        </div>
+        <div class="cert-info-wrap">
+          <div class="cert-issuer-meta">
+            <span>${c.issuer}</span>
+            <span class="sep">·</span>
+            <span>${c.validity}</span>
+          </div>
+          <h3 class="cert-name">${c.name}</h3>
+          <p class="cert-desc">${c.description}</p>
+          <div class="cert-domains">
+            ${c.domains.map((d, idx) => `<span>${d}</span>${idx < c.domains.length - 1 ? '<span class="sep">·</span>' : ''}`).join('')}
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // Hydrate Active Focus & Pursuits
+  const focusContainer = document.getElementById('focus-container');
+  if (focusContainer && Array.isArray(data.activePursuits)) {
+    focusContainer.innerHTML = data.activePursuits.map(item => `
+      <div class="focus-card">
+        <div class="focus-tagline">${item.status}</div>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+      </div>
+    `).join('');
+  }
+
   // Hydrate Projects and Development
   const projectsContainer = document.getElementById('projects-container');
   if (projectsContainer && Array.isArray(data.projectsAndDevelopment)) {

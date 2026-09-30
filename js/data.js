@@ -68,6 +68,67 @@ const PORTFOLIO_DATA = {
     }
   ],
 
+  certifications: [
+    {
+      id: "secplus",
+      name: "Security+",
+      issuer: "CompTIA",
+      badge: "assets/certifications/secplus.png",
+      validity: "Issued 2026 · Expires 2029",
+      description: "Global cybersecurity credential establishing core operational capabilities: threat analysis, vulnerability mitigation, identity and access management, and infrastructure protection.",
+      domains: ["SecOps", "Threat Detection", "Identity Management", "Cryptography"]
+    },
+    {
+      id: "az900",
+      name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      issuer: "Microsoft",
+      badge: "assets/certifications/az900.png",
+      validity: "Issued 2025",
+      description: "Foundational cloud computing architecture, security, privacy, compliance, and core Azure cloud services.",
+      domains: ["Cloud Architecture", "Azure Services", "IAM & Compliance", "Cloud Security"]
+    },
+    {
+      id: "isc2cc",
+      name: "Certified in Cybersecurity (CC)",
+      issuer: "ISC2",
+      badge: "assets/certifications/isc2cc.png",
+      validity: "Issued 2024 · Expires 2027",
+      description: "Fundamental principles of information security, incident response, network security concepts, and business continuity.",
+      domains: ["Security Principles", "Incident Response", "Network Security", "BC/DR"]
+    },
+    {
+      id: "csm-java",
+      name: "Certificate in Java Programming",
+      issuer: "College of San Mateo",
+      badge: "assets/certifications/csmSeal.png",
+      validity: "Issued 2024",
+      description: "Object-oriented programming, data structures, algorithms, modular application design, and deterministic problem-solving in Java.",
+      domains: ["Java", "OOP", "Data Structures", "Algorithms"]
+    },
+    {
+      id: "csm-cs",
+      name: "Certificate in Computer Science Applications and Development",
+      issuer: "College of San Mateo",
+      badge: "assets/certifications/csmSeal.png",
+      validity: "Issued 2024",
+      description: "Comprehensive software engineering, relational database modeling, systems programming, and modern application development lifecycles.",
+      domains: ["Software Engineering", "Systems Architecture", "Database Modeling"]
+    }
+  ],
+
+  activePursuits: [
+    {
+      title: "CompTIA CySA+ Certification",
+      status: "In Progress",
+      description: "Advancing expertise in cybersecurity analytics, intrusion detection, and proactive threat hunting to complement the existing Security+ credential."
+    },
+    {
+      title: "Digital Forensics & Incident Response (DFIR)",
+      status: "Active Research",
+      description: "Expanding knowledge in forensic artifact analysis, threat mitigation, and incident management through specialized training and industry summits."
+    }
+  ],
+
   projectsAndDevelopment: [
     {
       id: "homelab",
