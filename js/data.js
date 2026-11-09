@@ -131,6 +131,21 @@ const PORTFOLIO_DATA = {
 
   projectsAndDevelopment: [
     {
+      id: "BlueArgos",
+      title: "BlueArgos Tool Hub",
+      category: "IT Tools & SecOps",
+      period: "Self-Directed",
+      description: "A site hosting useful tools for both IT and Security Operations, aiding both IT professionals and cybersecurity operators in triaging and incident response.",
+      highlights: [
+        "Implemented OAuth and SSO for authenticated access to tools",
+        "Developed web applications such as runbooks, service monitoring, and an array of other useful tools",
+        "Evaluated modern cybersecurity threats, documenting current"
+      ],
+      techStack: ["Cloudflare", "OAuth", "SSO", "Security Operations", "Web Development"],
+      liveUrl: "https://blueargos.com",
+      featured: true
+    },
+    {
       id: "homelab",
       title: "IT & System Administration Lab (Homelab)",
       category: "Infrastructure & Threat Detection",
